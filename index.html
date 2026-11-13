@@ -63,9 +63,13 @@ main{padding:28px 0 60px}
 
 /* Learn tiles */
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:24px}
+.tgroup{margin-top:30px}
+.tgroup h2{font-size:1.25rem;display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:3px solid var(--accent)}
+.tgroup .tiles{margin-top:16px}
+.tile .glyph{font-size:1.1rem}
 .tile{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:18px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:10px;min-height:170px;transition:transform .12s,border-color .12s}
 .tile:hover{border-color:var(--accent);transform:translateY(-2px)}
-.tile .glyph{width:56px;height:56px;border-radius:10px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.4rem}
+.tile .glyph{min-width:56px;width:max-content;padding:0 10px;height:56px;border-radius:10px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.15rem}
 .tile h3{font-size:1.3rem}
 .tile .sub{color:var(--muted);font-size:.95em}
 .chip{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 10px;border-radius:999px;border:1.5px solid var(--line);color:var(--muted)}
@@ -167,7 +171,7 @@ ol.tips b{font-family:var(--display)}
     <div id="learn-home">
       <h1 id="learn-h">Hi <span id="hello-name">there</span>. Pick a task.</h1>
       <p class="lede">Short rounds. Tap the speaker to hear the question. Take your time.</p>
-      <div class="tiles" id="tiles"></div>
+      <div id="tiles"></div>
     </div>
     <div id="learn-play" hidden></div>
   </section>
@@ -406,13 +410,127 @@ var ACTS = [
        ch:opts.map(function(o){ return o.w; }), render:function(w){ var o = SIGNS.filter(function(s){return s.w===w;})[0]; return '<span class="sign" style="background:'+o.bg+';color:'+o.fg+'">'+w+'</span>'; }}; }}
 ];
 
+/* ---------- more activities ---------- */
+function regPts(n, r, cx, cy, rot){ var p=[]; for(var i=0;i<n;i++){ var a = (rot||0)*Math.PI/180 + i*2*Math.PI/n - Math.PI/2; p.push((cx+r*Math.cos(a)).toFixed(1)+","+(cy+r*Math.sin(a)).toFixed(1)); } return p.join(" "); }
+function shapeEl(name, cx, cy, r, col){
+  var st = 'style="fill:var(--'+col+');stroke:var(--ink);stroke-width:3"';
+  switch(name){
+    case "circle": return '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" '+st+'/>';
+    case "square": return '<rect x="'+(cx-r*0.8)+'" y="'+(cy-r*0.8)+'" width="'+(r*1.6)+'" height="'+(r*1.6)+'" '+st+'/>';
+    case "rectangle": return '<rect x="'+(cx-r*1.15)+'" y="'+(cy-r*0.6)+'" width="'+(r*2.3)+'" height="'+(r*1.2)+'" '+st+'/>';
+    case "triangle": return '<polygon points="'+regPts(3,r*1.05,cx,cy+r*0.15)+'" '+st+'/>';
+    case "pentagon": return '<polygon points="'+regPts(5,r,cx,cy)+'" '+st+'/>';
+    case "hexagon": return '<polygon points="'+regPts(6,r,cx,cy,30)+'" '+st+'/>';
+    case "octagon": return '<polygon points="'+regPts(8,r,cx,cy,22.5)+'" '+st+'/>';
+    case "oval": return '<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+(r*1.2)+'" ry="'+(r*0.7)+'" '+st+'/>';
+  }
+  return "";
+}
+function oneShape(name, r, col){ var w = r*2.6+8; return '<svg viewBox="0 0 '+w+' '+(r*2.2+8)+'" width="'+w+'" role="img" aria-label="'+name+'">'+shapeEl(name, w/2, r*1.1+4, r, col)+'</svg>'; }
+function boxesRow(vals){ // vals: numbers or null for the gap
+  var w = 78, s = "", W = vals.length*(w+12);
+  vals.forEach(function(v,i){ var x = i*(w+12)+4;
+    s += '<rect x="'+x+'" y="4" width="'+w+'" height="70" rx="10" style="fill:'+(v===null?"var(--paper)":"var(--frame)")+';stroke:'+(v===null?"var(--accent)":"var(--ink)")+';stroke-width:'+(v===null?5:3)+(v===null?';stroke-dasharray:8 6':'')+'"/>';
+    s += '<text x="'+(x+w/2)+'" y="52" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="32" style="fill:var(--ink)">'+(v===null?"?":v)+'</text>';
+  });
+  return '<svg viewBox="0 0 '+W+' 80" width="'+W+'" role="img" aria-label="number sequence with one missing">'+s+'</svg>';
+}
+function numberLine(start, n, gap){
+  var step = 64, W = n*step + 40, s = '<line x1="10" y1="40" x2="'+(W-10)+'" y2="40" style="stroke:var(--ink);stroke-width:4"/>';
+  for(var i=0;i<n;i++){ var x = 30 + i*step, v = start+i;
+    s += '<line x1="'+x+'" y1="26" x2="'+x+'" y2="54" style="stroke:var(--ink);stroke-width:3"/>';
+    if(v===gap) s += '<rect x="'+(x-24)+'" y="62" width="48" height="44" rx="8" style="fill:var(--paper);stroke:var(--accent);stroke-width:4;stroke-dasharray:6 5"/><text x="'+x+'" y="94" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="26" style="fill:var(--ink)">?</text>';
+    else s += '<text x="'+x+'" y="94" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="26" style="fill:var(--ink)">'+v+'</text>';
+  }
+  return '<svg viewBox="0 0 '+W+' 112" width="'+W+'" role="img" aria-label="number line with one number missing">'+s+'</svg>';
+}
+function rulerSVG(maxCm, len){
+  var u = 44, W = maxCm*u + 40, s = '<rect x="20" y="70" width="'+(maxCm*u)+'" height="64" rx="4" fill="#f7e7a8" stroke="#55606a" stroke-width="2"/>';
+  for(var mm=0; mm<=maxCm*2; mm++){ var x = 20 + mm*u/2, full = mm%2===0;
+    s += '<line x1="'+x+'" y1="70" x2="'+x+'" y2="'+(full?96:84)+'" stroke="#18232e" stroke-width="'+(full?2.5:1.5)+'"/>';
+    if(full) s += '<text x="'+x+'" y="122" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="18" fill="#18232e">'+(mm/2)+'</text>';
+  }
+  s += '<rect x="20" y="22" width="'+(len*u)+'" height="34" rx="6" style="fill:var(--c2);stroke:var(--ink);stroke-width:3"/>';
+  s += '<line x1="20" y1="14" x2="20" y2="70" style="stroke:var(--ink);stroke-width:2;stroke-dasharray:4 4"/><line x1="'+(20+len*u)+'" y1="14" x2="'+(20+len*u)+'" y2="70" style="stroke:var(--ink);stroke-width:2;stroke-dasharray:4 4"/>';
+  return '<svg viewBox="0 0 '+W+' 140" width="'+W+'" role="img" aria-label="bar above a centimetre ruler">'+s+'</svg>';
+}
+function priceTag(c){ var t = c>=100 ? "$"+(c/100).toFixed(2) : c+"¢";
+  return '<svg viewBox="0 0 150 90" width="150" role="img" aria-label="price '+t+'"><path d="M30 8 H142 V82 H30 L6 45 Z" style="fill:var(--accent);stroke:var(--ink);stroke-width:3"/><circle cx="30" cy="45" r="6" style="fill:var(--paper);stroke:var(--ink);stroke-width:2"/><text x="88" y="56" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="30" fill="#18232e">'+t+'</text></svg>'; }
+var DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+var WORDS = ["the","and","is","you","go","my","no","yes","can","see","look","help","come","here","we","it","stop","play","said","what"];
+var STORY = [
+  {thing:"bus tickets", add:"You buy", sub:"You use"},{thing:"cups", add:"Someone brings", sub:"You wash"},
+  {thing:"pencils", add:"Your teacher gives you", sub:"You lend"},{thing:"apples", add:"You pick", sub:"You eat"},
+  {thing:"chairs", add:"You carry in", sub:"You take away"},{thing:"football cards", add:"A friend gives you", sub:"You trade away"},
+  {thing:"dollars", add:"You earn", sub:"You spend"},{thing:"songs on your playlist", add:"You add", sub:"You delete"}
+];
+var wordy = function(v){ return '<span style="font-size:clamp(1.1rem,2.6vw,1.6rem)">'+esc(v)+'</span>'; };
+ACTS.push(
+  {id:"line", t:"Number line", sub:"Find the missing number", strand:"Number", grp:"Number", g:"_5_",
+   gen:function(){ var n = 6, start = rnd(0, Math.max(0, S.range - n + 1)), gap = start + rnd(0, n-1);
+     return {q:"What number is missing?", speak:"Look at the number line. What number is missing?", vis:numberLine(start, n, gap), ans:gap, ch:around(gap, S.choices, 0, S.range)}; }},
+  {id:"ten", t:"Make 10", sub:"How many more to fill the frame?", strand:"Number", grp:"Number", g:"10",
+   gen:function(){ var target = S.range===10 ? 10 : 20, have = rnd(target===10?1:10, target-1), need = target - have;
+     return {q:"How many more to make "+target+"?", speak:"There are "+have+". How many more to make "+target+"?", vis:tenFrames(row(have,"c1")), ans:need, ch:around(need, S.choices, 0, target)}; }},
+  {id:"skip", t:"Skip count", sub:"Count by 2s, 5s and 10s", strand:"Number", grp:"Number", g:"5·10",
+   gen:function(){ var step = S.range===10 ? pick([5,10]) : pick([2,5,10]), start = step*rnd(0, 4), seq = [], gi = rnd(1,4);
+     for(var i=0;i<5;i++) seq.push(start + i*step);
+     var ans = seq[gi], show = seq.map(function(v,i){ return i===gi ? null : v; });
+     return {q:"Count by "+step+"s. What is missing?", speak:"Count by "+step+"s. What number is missing?", vis:boxesRow(show), ans:ans, ch:around(ans, S.choices, 0, 200, step)}; }},
+  {id:"story", t:"Story problems", sub:"Real-life adding and taking away", strand:"Problem solving", grp:"Number", g:"?",
+   gen:function(){ var c = pick(STORY), addq = Math.random()<0.5, a, b, ans, q;
+     if(addq){ a = rnd(1, S.range-1); b = rnd(1, S.range-a); ans = a+b; q = "You have "+a+" "+c.thing+". "+c.add+" "+b+" more. How many now?"; }
+     else { a = rnd(2, S.range); b = rnd(1, a-1); ans = a-b; q = "You have "+a+" "+c.thing+". "+c.sub+" "+b+". How many are left?"; }
+     var it = row(a,"c1"); if(addq) it = it.concat(row(b,"c2")); else for(var i=a-b;i<a;i++) it[i].x = true;
+     return {q:q, speak:q, vis:tenFrames(it), ans:ans, ch:around(ans, S.choices, 0, S.range)}; }},
+  {id:"measure", t:"Measure", sub:"Use a ruler in centimetres", strand:"Measurement", grp:"Money, time & measuring", g:"cm",
+   gen:function(){ var max = S.range===10 ? 10 : 15, len = rnd(1, max);
+     return {q:"How long is the bar?", speak:"The bar starts at zero. How many centimetres long is it?", vis:rulerSVG(max, len), ans:len, ch:around(len, S.choices, 1, max), fmt:function(v){ return v+" cm"; }}; }},
+  {id:"enough", t:"Can I buy it?", sub:"Do you have enough money?", strand:"Money", grp:"Money, time & measuring", g:"$?",
+   gen:function(){ var list, total;
+     if(S.range===10){ var v = pick([10,25]), k = rnd(1,4); list = []; for(var i=0;i<k;i++) list.push(v); }
+     else { list = []; var n = rnd(2,5); for(var j=0;j<n;j++) list.push(pick([5,10,25])); list.sort(function(x,y){return y-x;}); }
+     total = list.reduce(function(s,x){return s+x;},0);
+     var price = Math.random()<0.5 ? total - 5*rnd(0, Math.min(4, total/5 - 1)) : total + 5*rnd(1,4);
+     var vis = '<div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center">'+coinsSVG(list)+priceTag(price)+'</div>';
+     return {q:"Do you have enough money?", speak:"Count your coins. Do you have enough to pay the price on the tag?", vis:vis, ans: total>=price ? "Yes" : "No", ch:["Yes","No"], fixed:true}; }},
+  {id:"shapes", t:"Shapes", sub:"Name the shape", strand:"Geometry", grp:"Shape & pattern", g:"◆",
+   gen:function(){ var pool = S.range===10 ? ["circle","square","triangle","rectangle"] : ["circle","square","triangle","rectangle","pentagon","hexagon","octagon","oval"];
+     var opts = shuffle(pool).slice(0, S.choices), target = pick(opts);
+     return {q:"What shape is this?", speak:"What is the name of this shape?", vis:oneShape(target, 80, pick(["c1","c2"])), ans:target, ch:opts, render:wordy}; }},
+  {id:"pattern", t:"Patterns", sub:"What comes next?", strand:"Patterns", grp:"Shape & pattern", g:"○□",
+   gen:function(){ var units = S.range===10 ? [["circle","square"],["triangle","circle"],["square","square","circle"]] : [["circle","square","triangle"],["circle","circle","square"],["triangle","square","square"],["square","circle","triangle","circle"]];
+     var u = pick(units), len = u.length*2 + rnd(0, u.length-1), seq = []; for(var i=0;i<len;i++) seq.push(u[i%u.length]);
+     var ans = u[len%u.length], cols = {circle:"c1", square:"c2", triangle:"c1"}, r = 26, s = "";
+     seq.forEach(function(sh,i){ s += shapeEl(sh, 36+i*76, 40, r, cols[sh]); });
+     var x = 36+len*76; s += '<rect x="'+(x-30)+'" y="8" width="60" height="64" rx="8" style="fill:var(--paper);stroke:var(--accent);stroke-width:4;stroke-dasharray:6 5"/><text x="'+x+'" y="52" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="28" style="fill:var(--ink)">?</text>';
+     var W = x + 40, vis = '<svg viewBox="0 0 '+W+' 80" width="'+W+'" role="img" aria-label="shape pattern">'+s+'</svg>';
+     var opts = ["circle","square","triangle"].slice(0, Math.max(2, Math.min(3, S.choices))); if(opts.indexOf(ans)<0) opts[0] = ans;
+     return {q:"What comes next?", speak:"Look at the pattern. Which shape comes next?", vis:vis, ans:ans, ch:shuffle(opts), render:function(v){ return oneShape(v, 26, cols[v]); }}; }},
+  {id:"days", t:"Days of the week", sub:"Before and after", strand:"Time", grp:"Reading & life skills", g:"Mon",
+   gen:function(){ var i = rnd(0,6), after = S.range===10 || Math.random()<0.5, ans = DAYS[after ? (i+1)%7 : (i+6)%7];
+     var opts = [ans]; shuffle(DAYS).forEach(function(d){ if(opts.length < S.choices && opts.indexOf(d)<0) opts.push(d); });
+     var q = "What day comes "+(after?"after ":"before ")+DAYS[i]+"?";
+     var vis = '<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">'+DAYS.map(function(d,k){ return '<span class="chip" style="font-size:1rem;'+(k===i?'background:var(--accent);color:var(--accent-ink);border-color:var(--accent)':'')+'">'+d.slice(0,3)+'</span>'; }).join("")+'</div>';
+     return {q:q, speak:q, vis:vis, ans:ans, ch:shuffle(opts), render:wordy}; }},
+  {id:"words", t:"Read words", sub:"Listen and find the word", strand:"Reading", grp:"Reading & life skills", g:"Aa",
+   gen:function(){ var pool = S.range===10 ? WORDS.slice(0,10) : WORDS, opts = shuffle(pool).slice(0, S.choices), target = pick(opts);
+     return {q: S.voice ? "Listen. Find the word." : "Find the word: "+target, speak:"Find the word "+target+".", vis:'<p style="margin:0;color:var(--muted)">Tap the speaker to hear the word again.</p>', ans:target, ch:opts, render:function(v){ return '<span style="font-family:var(--body);text-transform:none">'+esc(v)+'</span>'; }}; }}
+);
+var GROUPS = ["Number", "Money, time & measuring", "Shape & pattern", "Reading & life skills"];
+ACTS.forEach(function(a){ if(!a.grp) a.grp = {count:"Number",add:"Number",sub:"Number",more:"Number",place:"Number",money:"Money, time & measuring",time:"Money, time & measuring",signs:"Reading & life skills"}[a.id]; });
+
 /* ---------- player ---------- */
 var tilesEl = document.getElementById("tiles"), home = document.getElementById("learn-home"), play = document.getElementById("learn-play");
 function renderTiles(){
   document.getElementById("hello-name").textContent = S.name || "there";
-  tilesEl.innerHTML = ACTS.map(function(a){
+  var tile = function(a){
     var p = progSource()[a.id], sc = p ? Math.round(100*p.first/p.qs)+"% right first try · "+p.rounds+" rounds" : "Not tried yet";
     return '<button class="tile" type="button" data-act="'+a.id+'"><span class="glyph" aria-hidden="true">'+a.g+'</span><span class="chip">'+a.strand+'</span><h3>'+a.t+'</h3><span class="sub">'+a.sub+'</span><span class="score">'+sc+'</span></button>';
+  };
+  tilesEl.innerHTML = GROUPS.map(function(g){
+    var list = ACTS.filter(function(a){ return a.grp===g; });
+    return '<section class="tgroup"><h2>'+esc(g)+' <span class="chip">'+list.length+'</span></h2><div class="tiles">'+list.map(tile).join("")+'</div></section>';
   }).join("");
 }
 tilesEl.addEventListener("click", function(e){ var b = e.target.closest(".tile"); if(b) start(b.dataset.act); });
@@ -603,7 +721,62 @@ var LIB = [
   tip:"Match each IPP goal to the Grade 1–2 outcome it comes from, to keep reporting consistent."},
  {n:"ConnectABILITY", u:"https://connectability.ca", s:["Life skills","Teacher guidance"], ty:"Printable", c:"Free", teen:true, a:["visuals tool","Canadian"],
   w:"Canadian site with a free visuals engine for schedules and social stories, plus guides for people with developmental disabilities.",
-  tip:"Make visual task strips for multi-step tasks like 'count the coins, say the total, pay'."}
+  tip:"Make visual task strips for multi-step tasks like 'count the coins, say the total, pay'."},
+ // MORE — added
+ {n:"mathies (Ontario)", u:"https://www.mathies.ca", s:["Maths"], ty:"Manipulative", c:"Free", teen:true, a:["Canadian money","rekenrek","no ads","offline apps"],
+  w:"Free Canadian virtual manipulatives from the Ontario Association for Mathematics Education, including realistic Canadian coins and bills.",
+  tip:"Its Money tool uses real Canadian coins, matching the coin tasks in the Learn tab. Practise counting by 5s, 10s and 25s."},
+ {n:"Teaching Money (Canadian)", u:"https://teachingmoney.co.uk/indexCAD.html", s:["Maths","Life skills"], ty:"Interactive", c:"Free", teen:false, a:["Canadian coins","giving change"],
+  w:"Interactive games for recognising Canadian coins, making totals and giving change.",
+  tip:"Use the teaching tool on a projector first, then let the student try one game."},
+ {n:"MathsBot manipulatives", u:"https://mathsbot.com/manipulativeMenu", s:["Maths"], ty:"Manipulative", c:"Free", teen:true, a:["web","no login"],
+  w:"Large free set of virtual manipulatives (counters, base-ten, money strips, number lines) with a plain secondary-school look.",
+  tip:"Its look is made for secondary schools, so it is ideal for teens doing primary-level work."},
+ {n:"Zearn Math", u:"https://www.zearn.org", s:["Maths"], ty:"Course", c:"Free", teen:false, a:["on-screen teachers","K–5 lessons","teacher dashboard"],
+  w:"Free K–5 digital maths lessons with on-screen teachers, visual models and digital manipulatives, plus a free teacher account.",
+  tip:"Assign Kindergarten and Grade 1 lessons individually; the visual models match concrete-pictorial-abstract teaching."},
+ {n:"Greg Tang Math", u:"https://gregtangmath.com", s:["Maths"], ty:"Interactive", c:"Free + paid extras", teen:true, a:["number sense games","manipulatives"],
+  w:"Number-sense games and puzzles built on grouping and making ten.",
+  tip:"The games are quick and puzzle-like, which suits students who resist 'learning games'."},
+ {n:"Visnos", u:"https://www.visnos.com", s:["Maths"], ty:"Manipulative", c:"Free", teen:true, a:["web","clocks","fractions","shapes"],
+  w:"Free interactive maths tools such as clocks, place value, fractions and shape tools.",
+  tip:"The interactive clock is good for modelling o'clock and half past before the clock task."},
+ {n:"NRICH (Cambridge)", u:"https://nrich.maths.org", s:["Maths","Teacher guidance"], ty:"Printable", c:"Free", teen:true, a:["rich tasks","early years and primary"],
+  w:"Free hands-on maths tasks and games from the University of Cambridge, sorted by age and topic.",
+  tip:"Filter to early years and lower primary tasks; many use real objects and work well with older students."},
+ {n:"Topmarks: Hit the Button", u:"https://www.topmarks.co.uk/maths-games/hit-the-button", s:["Maths"], ty:"Interactive", c:"Free", teen:true, a:["number bonds","doubles","times tables"],
+  w:"Fast number-fact game covering number bonds to 10 and 20, doubles and times tables.",
+  tip:"Turn off the timer pressure by playing it together and counting correct answers instead of speed."},
+ {n:"Practical Money Skills (Visa)", u:"https://www.practicalmoneyskills.com", s:["Life skills","Maths"], ty:"Printable", c:"Free", teen:true, a:["financial literacy","lesson plans","games"],
+  w:"Free financial literacy lessons and games covering budgeting, shopping and saving.",
+  tip:"Pick the earliest-level lessons; the topics suit teens preparing for independent life."},
+ {n:"Rewordify", u:"https://rewordify.com", s:["Literacy","Access & communication"], ty:"Interactive", c:"Free", teen:true, a:["simplifies text","vocabulary"],
+  w:"Free site that simplifies hard English and highlights changed words.",
+  tip:"Paste in a class text before giving it to the student so they read the same content as peers."},
+ {n:"Read&Write (Texthelp)", u:"https://www.texthelp.com/products/read-and-write-education/", s:["Literacy","Access & communication"], ty:"Interactive", c:"Free + paid extras", teen:true, a:["read-aloud","talk & type","free for K–12 teachers"],
+  w:"Toolbar that reads text aloud, simplifies web pages, defines words and turns speech into text.",
+  tip:"Premium is free for K–12 teachers; ask IT about a school licence so students can use it too."},
+ {n:"Newsela", u:"https://newsela.com", s:["Literacy"], ty:"Book", c:"Free + paid extras", teen:true, a:["real news","5 reading levels","audio"],
+  w:"Real news articles rewritten at several reading levels.",
+  tip:"Real-world news at the lowest level gives teens age-appropriate reading at their level."},
+ {n:"Epic (free for educators)", u:"https://www.getepic.com", s:["Literacy"], ty:"Book", c:"Free + paid extras", teen:false, a:["read-to-me books","audiobooks"],
+  w:"Large digital library with read-to-me books and audiobooks; free during school hours for teachers.",
+  tip:"Search non-fiction topics the student loves (cars, animals, sport) rather than picture-book stories."},
+ {n:"Oxford Owl for Home", u:"https://www.oxfordowl.co.uk", s:["Literacy","Maths"], ty:"Book", c:"Free", teen:false, a:["free ebooks","phonics levels"],
+  w:"Free levelled ebooks from Oxford University Press with phonics and maths activities.",
+  tip:"Reading-age matching is easy; preview the covers first because many are aimed at young children."},
+ {n:"Book Creator", u:"https://bookcreator.com", s:["Literacy","Access & communication"], ty:"Interactive", c:"Free + paid extras", teen:true, a:["make your own books","audio","photos"],
+  w:"Make books with photos, audio and video. Free plan for one library of books.",
+  tip:"Make books about the student's own life, using photos and their own voice recordings."},
+ {n:"Widgit Online", u:"https://www.widgit.com", s:["Access & communication","Literacy"], ty:"Printable", c:"Paid", teen:true, a:["symbol-supported text","visual timetables"],
+  w:"Symbol-supported writing and resource tool used widely in special schools.",
+  tip:"Symbol-supported worksheets help students read maths word problems independently."},
+ {n:"Carol Gray Social Stories", u:"https://carolgraysocialstories.com", s:["Life skills","Teacher guidance"], ty:"Printable", c:"Free + paid extras", teen:true, a:["social stories"],
+  w:"The original guidance on writing Social Stories for autistic learners.",
+  tip:"Write a short story for new routines, like 'When I use the clock app in maths'."},
+ {n:"DragonBox Numbers", u:"https://dragonbox.com", s:["Maths"], ty:"Interactive", c:"Paid", teen:false, a:["iPad/Android","number sense"],
+  w:"Puzzle game where number characters combine and split to build number sense to 100.",
+  tip:"Strong concept work through play; check the app's cost through your school before buying."}
 ];
 var resEl = document.getElementById("res"), fq = document.getElementById("q"), fs = document.getElementById("f-subject"), ft = document.getElementById("f-type"), fc = document.getElementById("f-cost"), fteen = document.getElementById("f-teen");
 function renderLib(){
