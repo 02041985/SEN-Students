@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Step Up Learning Hub</title>
+<title>MillardSEN</title>
+<meta name="description" content="MillardSEN: maths, money, time and reading practice for students with special educational needs, made for older learners.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap" rel="stylesheet">
@@ -148,6 +149,97 @@ ol.tips b{font-family:var(--display)}
 .note{font-size:.9rem;color:var(--muted);margin-top:12px}
 .tablewrap{overflow-x:auto}
 
+
+/* ---------- MillardSEN home ---------- */
+:root{ --g1:#2f7bf6; --g2:#ff8a1f; --g3:#8b5cf6; --g4:#12a594; --hero:#14213d; }
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.brand{color:inherit;text-decoration:none}
+.brand b{color:var(--accent)}
+.brand .mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:none;width:34px;height:34px;padding:0}
+.brand .mark i{border-radius:4px;display:block}
+.hero{position:relative;background:var(--hero);color:#fff;border-radius:28px;padding:44px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -60px -80px auto;width:260px;height:260px;border-radius:50%;background:var(--g3);opacity:.35}
+.hero::after{content:"";position:absolute;inset:-70px auto auto -50px;width:200px;height:200px;border-radius:50%;background:var(--g4);opacity:.3}
+.hero-text,.hero-art{position:relative;z-index:1}
+.hello{margin:0 0 6px;font-weight:700;color:#ffd166;font-size:1.1rem}
+.wordmark{font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:-.02em;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.tiles-word{display:inline-flex;gap:6px}
+.tiles-word span{display:inline-grid;place-items:center;width:1.05em;height:1.05em;border-radius:.18em;color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.25);font-size:.85em}
+.tiles-word span:nth-child(2){transform:rotate(-6deg)}
+.tiles-word span:nth-child(3){transform:rotate(5deg)}
+.tagline{font-size:1.2rem;max-width:34ch;color:#dfe6f3;margin:16px 0 24px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn.big{font-size:1.15rem;padding:14px 24px;min-height:56px;text-decoration:none;display:inline-flex;align-items:center}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+a.btn{text-decoration:none;display:inline-flex;align-items:center}
+.hero-stats{list-style:none;display:flex;gap:28px;flex-wrap:wrap;padding:0;margin:28px 0 0}
+.hero-stats li{display:flex;flex-direction:column}
+.hero-stats b{font-family:var(--display);font-size:2rem;color:#ffd166;font-variant-numeric:tabular-nums}
+.hero-stats span{font-size:.9rem;color:#c5cfe0}
+.hero-art svg{width:100%;height:auto;max-width:440px;display:block;margin:0 auto}
+.fl{animation:float 6s ease-in-out infinite}
+.f2{animation-delay:-1.5s}.f3{animation-delay:-3s}.f4{animation-delay:-4.5s}
+@keyframes float{50%{transform:translateY(-8px)}}
+.home-h2{font-size:1.6rem;margin:40px 0 16px}
+.areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.area{border:0;border-radius:22px;padding:22px;text-align:left;cursor:pointer;color:#fff;display:flex;flex-direction:column;gap:10px;min-height:220px;box-shadow:0 8px 0 rgba(20,33,61,.18);transition:transform .15s}
+.area:hover{transform:translateY(-4px)}
+.area:focus-visible{outline:4px solid var(--ink);outline-offset:4px}
+.area .ic{width:64px;height:64px;border-radius:16px;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.area h3{font-size:1.4rem;color:#fff}
+.area p{margin:0;color:rgba(255,255,255,.92);font-size:1rem}
+.area .cnt{margin-top:auto;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.area .cnt span{background:rgba(255,255,255,.25);padding:4px 12px;border-radius:999px}
+.area.a2{color:#2a1600}.area.a2 h3,.area.a2 p{color:#2a1600}
+.home-split{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;margin-top:40px}
+.how,.teach{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:24px}
+.steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+.steps li{display:flex;gap:14px;align-items:flex-start}
+.steps .num{flex:none;width:44px;height:44px;border-radius:50%;color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.2rem}
+.steps p{margin:2px 0 0;color:var(--muted)}
+.feat{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px;margin:0 0 20px}
+.feat li{padding-left:30px;position:relative}
+.feat li::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;border-radius:5px;background:var(--g4)}
+.feat li:nth-child(2)::before{background:var(--g2)}.feat li:nth-child(3)::before{background:var(--g1)}.feat li:nth-child(4)::before{background:var(--g3)}
+.madeby{text-align:center;color:var(--muted);margin-top:36px}
+.tgroup h2{border-bottom-color:var(--gc,var(--accent))}
+@media (max-width:820px){ .hero{grid-template-columns:1fr;padding:32px 22px} .hero-art{max-width:360px;margin:0 auto} .home-split{grid-template-columns:1fr} }
+@media (prefers-reduced-motion: reduce){ .fl{animation:none} }
+
+/* ---------- sign in & approvals ---------- */
+[hidden]{display:none!important}
+.acct-chip{display:flex;align-items:center;gap:10px}
+.acct-chip .btn.signin{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);min-height:40px;padding:6px 16px}
+#chip-user{display:inline-flex;align-items:center;gap:10px;font-weight:700}
+.btn.small{min-height:36px;padding:4px 12px;font-size:.9rem;background:transparent;color:inherit;border-color:currentColor}
+.gate{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:28px;overflow:hidden;background:var(--card);border:2px solid var(--line);max-width:960px;margin:0 auto}
+.gate-side{background:var(--hero);color:#fff;padding:40px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;overflow:hidden}
+.gate-side::after{content:"";position:absolute;right:-60px;bottom:-60px;width:200px;height:200px;border-radius:50%;background:var(--g3);opacity:.4}
+.gate-side p{font-size:1.15rem;color:#dfe6f3;margin:0;position:relative;z-index:1}
+.tiles-word.big{font-family:var(--display);font-weight:700;font-size:3.4rem}
+.gate-main{padding:36px}
+.gate-tabs{display:flex;gap:6px;background:var(--paper);padding:6px;border-radius:14px;margin-bottom:18px}
+.gate-tabs button{flex:1;border:0;background:transparent;padding:12px;border-radius:10px;font-weight:700;cursor:pointer;min-height:48px}
+.gate-tabs button[aria-selected="true"]{background:var(--card);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.gate-h{font-size:1.8rem;margin-bottom:14px}
+.lbl{display:block;font-weight:700;margin:14px 0 6px}
+.lbl small{font-weight:400;color:var(--muted)}
+.inp{width:100%;padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:var(--paper);min-height:52px;font-size:1.1rem}
+.inp:focus{border-color:var(--g1)}
+.btn.wide{width:100%;justify-content:center;margin-top:22px}
+.gate-state{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 0}
+.state-ic{width:84px;height:84px;border-radius:24px;display:grid;place-items:center;font-size:2.2rem;color:#fff}
+.row-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.wide-panel{grid-column:1/-1}
+.req{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
+.req:last-child{border-bottom:0}
+.req .who{flex:1 1 220px}
+.req .who b{display:block;font-size:1.1rem}
+.req .who span{color:var(--muted);font-size:.9rem}
+.btn.ok{background:var(--good);border-color:var(--good);color:#fff}
+.btn.no{border-color:var(--bad);color:var(--bad)}
+.empty{color:var(--muted);margin:0}
+@media (max-width:760px){ .gate{grid-template-columns:1fr} .gate-side{padding:28px} .gate-main{padding:24px} }
 @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
 :root.calm *{animation:none!important;transition:none!important}
 @media (max-width:420px){ .wrap,.topin{padding-left:16px;padding-right:16px} .choice{min-height:80px} }
@@ -156,16 +248,98 @@ ol.tips b{font-family:var(--display)}
 <body>
 <header class="top">
   <div class="topin">
-    <div class="brand"><span class="mark" aria-hidden="true">↑</span> Step Up</div>
+    <a class="brand" href="#home" aria-label="MillardSEN home"><span class="mark" aria-hidden="true"><i style="background:var(--g1)"></i><i style="background:var(--g2)"></i><i style="background:var(--g3)"></i><i style="background:var(--g4)"></i></span> Millard<b>SEN</b></a>
     <nav class="tabs" aria-label="Sections">
+      <a href="#home" data-view="home">Home</a>
       <a href="#learn" data-view="learn">Learn</a>
       <a href="#library" data-view="library">Library</a>
-      <a href="#teacher" data-view="teacher">Teacher</a>
+      <a href="#teacher" data-view="teacher" id="nav-teacher" hidden>Teacher</a>
     </nav>
+    <div class="acct-chip" id="acct-chip"><a class="btn signin" href="#signin" id="chip-in">Sign in</a><span id="chip-user" hidden><span id="chip-name"></span><button class="btn small" type="button" data-signout>Sign out</button></span></div>
   </div>
 </header>
 
 <main class="wrap">
+  <!-- HOME -->
+  <section id="v-home" class="view" aria-labelledby="home-h">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="hello" id="home-hello">Welcome</p>
+        <h1 id="home-h" class="wordmark">Millard<span class="tiles-word" aria-hidden="true"><span style="background:var(--g1)">S</span><span style="background:var(--g2)">E</span><span style="background:var(--g4)">N</span></span><span class="sr">SEN</span></h1>
+        <p class="tagline">Learning at your own pace. Big buttons, clear voices and real-life maths, made for students who need more time.</p>
+        <div class="hero-cta">
+          <a class="btn primary big" href="#learn">Start learning →</a>
+          <a class="btn ghost big" href="#library">Explore resources</a>
+        </div>
+        <ul class="hero-stats" aria-label="What is inside">
+          <li><b id="st-tasks">18</b><span>practice tasks</span></li>
+          <li><b id="st-res">58</b><span>hand-picked resources</span></li>
+          <li><b>4</b><span>learning areas</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 440 400" width="440">
+          <g class="fl f1">
+            <rect x="40" y="40" width="250" height="104" rx="14" fill="#ffffff" stroke="#14213d" stroke-width="4"/>
+            <g stroke="#14213d" stroke-width="2.5"><line x1="90" y1="40" x2="90" y2="144"/><line x1="140" y1="40" x2="140" y2="144"/><line x1="190" y1="40" x2="190" y2="144"/><line x1="240" y1="40" x2="240" y2="144"/><line x1="40" y1="92" x2="290" y2="92"/></g>
+            <circle cx="65" cy="66" r="17" fill="#2f7bf6"/><circle cx="115" cy="66" r="17" fill="#2f7bf6"/><circle cx="165" cy="66" r="17" fill="#2f7bf6"/><circle cx="215" cy="66" r="17" fill="#ff6b4a"/><circle cx="265" cy="66" r="17" fill="#ff6b4a"/>
+            <circle cx="65" cy="118" r="17" fill="#ffc233"/><circle cx="115" cy="118" r="17" fill="#ffc233"/>
+          </g>
+          <g class="fl f2">
+            <circle cx="360" cy="110" r="62" fill="#ffffff" stroke="#14213d" stroke-width="5"/>
+            <g fill="#14213d" font-family="Lexend, sans-serif" font-weight="700" font-size="15" text-anchor="middle"><text x="360" y="68">12</text><text x="404" y="115">3</text><text x="360" y="162">6</text><text x="316" y="115">9</text></g>
+            <line x1="360" y1="110" x2="360" y2="66" stroke="#ff6b4a" stroke-width="6" stroke-linecap="round"/><line x1="360" y1="110" x2="390" y2="110" stroke="#2f7bf6" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="360" cy="110" r="6" fill="#14213d"/>
+          </g>
+          <g class="fl f3">
+            <circle cx="96" cy="262" r="46" fill="#cfd5da" stroke="#14213d" stroke-width="4"/><circle cx="96" cy="262" r="32" fill="none" stroke="#14213d" stroke-width="2" stroke-dasharray="4 5"/>
+            <text x="96" y="270" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="26" fill="#14213d">1</text><text x="96" y="288" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="10" fill="#14213d">DIRHAM</text>
+            <rect x="140" y="272" width="92" height="52" rx="6" fill="#3f8a55" stroke="#14213d" stroke-width="4"/><text x="222" y="306" text-anchor="end" font-family="Lexend, sans-serif" font-weight="700" font-size="24" fill="#ffffff">10</text><text x="148" y="318" font-family="Lexend, sans-serif" font-weight="700" font-size="9" fill="#ffffff">AED</text>
+          </g>
+          <g class="fl f4">
+            <polygon points="300,215 352,305 248,305" fill="#8b5cf6" stroke="#14213d" stroke-width="4"/>
+            <polygon points="392,240 422,257 422,291 392,308 362,291 362,257" fill="#12b5a0" stroke="#14213d" stroke-width="4"/>
+          </g>
+          <g class="fl f2">
+            <rect x="214" y="330" width="96" height="58" rx="10" fill="#ffc233" stroke="#14213d" stroke-width="4"/>
+            <text x="262" y="368" text-anchor="middle" font-family="Atkinson Hyperlegible, sans-serif" font-weight="700" font-size="26" fill="#14213d">EXIT</text>
+          </g>
+          <g class="fl f1">
+            <rect x="338" y="330" width="62" height="58" rx="10" fill="#ff6b4a" stroke="#14213d" stroke-width="4"/>
+            <text x="369" y="369" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="26" fill="#ffffff">Aa</text>
+          </g>
+          <circle cx="24" cy="190" r="9" fill="#ffc233"/><circle cx="420" cy="20" r="7" fill="#12b5a0"/><rect x="200" y="186" width="16" height="16" rx="3" fill="#ff6b4a" transform="rotate(20 208 194)"/><circle cx="318" cy="22" r="5" fill="#8b5cf6"/>
+        </svg>
+      </div>
+    </div>
+
+    <h2 class="home-h2">Choose where to start</h2>
+    <div class="areas" id="areas"></div>
+
+    <div class="home-split">
+      <div class="how">
+        <h2 class="home-h2" style="margin-top:0">How a session works</h2>
+        <ol class="steps">
+          <li><span class="num" style="background:var(--g1)">1</span><div><b>Pick a task</b><p>Tap a big card. Each round is short: 3, 5 or 10 questions.</p></div></li>
+          <li><span class="num" style="background:var(--g2)">2</span><div><b>Listen and look</b><p>Tap the speaker to hear the question as many times as you like.</p></div></li>
+          <li><span class="num" style="background:var(--g3)">3</span><div><b>Have a go</b><p>Wrong answers just fade away. After two tries, the right answer glows.</p></div></li>
+          <li><span class="num" style="background:var(--g4)">4</span><div><b>See your progress</b><p>Fill in your stars, then try again or pick something new.</p></div></li>
+        </ol>
+      </div>
+      <div class="teach">
+        <h2 class="home-h2" style="margin-top:0">For teachers and assistants</h2>
+        <ul class="feat">
+          <li>Set the level per student: numbers to 10 or 20, 2 to 4 answer buttons</li>
+          <li>Errorless learning, read-aloud, larger text and a calm mode</li>
+          <li>Progress saved to the school database when you sign in</li>
+          <li>Real-life content for older learners: UAE dirhams, clocks, signs</li>
+        </ul>
+        <a class="btn primary" href="#teacher">Open teacher settings</a>
+      </div>
+    </div>
+    <p class="madeby">Made by Mr Millard for students who learn at their own pace.</p>
+  </section>
+
   <!-- LEARN -->
   <section id="v-learn" class="view" aria-labelledby="learn-h">
     <div id="learn-home">
@@ -196,32 +370,69 @@ ol.tips b{font-family:var(--display)}
     <div class="res" id="res"></div>
   </section>
 
-  <!-- TEACHER -->
-  <section id="v-teacher" class="view" aria-labelledby="t-h">
-    <h1 id="t-h">Teacher settings</h1>
-    <p class="lede">Set the level for the student using this device. Settings and progress stay in this browser only; nothing is sent anywhere.</p>
-    <div class="grid2">
-      <div class="panel" id="acct">
-        <h2>Teacher account</h2>
-        <div id="acct-out">
-          <p class="note" style="margin-top:0">Sign in to save students and progress to the school database (Mathsguru). Without signing in, everything stays on this device only.</p>
-          <form id="login" class="loginform" novalidate>
-            <div class="field"><label for="l-email">Email</label><input id="l-email" type="email" autocomplete="username" required></div>
-            <div class="field"><label for="l-pass">Password</label><input id="l-pass" type="password" autocomplete="current-password" required minlength="6"></div>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px"><button class="btn primary" type="submit" id="l-in">Sign in</button><button class="btn" type="button" id="l-up">Create account</button></div>
+  <!-- SIGN IN -->
+  <section id="v-signin" class="view" aria-labelledby="si-h">
+    <div class="gate">
+      <div class="gate-side" aria-hidden="true">
+        <div class="tiles-word big"><span style="background:var(--g1)">S</span><span style="background:var(--g2)">E</span><span style="background:var(--g4)">N</span></div>
+        <p>Every student gets their own sign-in. Mr Millard approves each new account before it can be used.</p>
+      </div>
+      <div class="gate-main">
+        <div id="gate-loading"><h1 id="si-h">One moment…</h1></div>
+        <div id="gate-forms" hidden>
+          <div class="gate-tabs" role="tablist" aria-label="Sign in or join">
+            <button type="button" role="tab" id="tab-in" aria-selected="true" aria-controls="form-in">I have an account</button>
+            <button type="button" role="tab" id="tab-up" aria-selected="false" aria-controls="form-up">I am new</button>
+          </div>
+          <form id="form-in" novalidate>
+            <h1 class="gate-h">Sign in</h1>
+            <label class="lbl" for="in-email">Email</label><input class="inp" id="in-email" type="email" autocomplete="username" required>
+            <label class="lbl" for="in-pass">Password</label><input class="inp" id="in-pass" type="password" autocomplete="current-password" required>
+            <button class="btn primary big wide" type="submit">Sign in</button>
+          </form>
+          <form id="form-up" hidden novalidate>
+            <h1 class="gate-h">Ask to join</h1>
+            <label class="lbl" for="up-name">Your first name</label><input class="inp" id="up-name" type="text" maxlength="40" autocomplete="given-name" required>
+            <label class="lbl" for="up-email">Email</label><input class="inp" id="up-email" type="email" autocomplete="username" required>
+            <label class="lbl" for="up-pass">Make a password<small> (at least 6 letters or numbers)</small></label><input class="inp" id="up-pass" type="password" autocomplete="new-password" required minlength="6">
+            <button class="btn primary big wide" type="submit">Send my request</button>
+            <p class="note">If you already use MillardMaths or MillardScience, use that same email and password on the "I have an account" tab.</p>
           </form>
         </div>
-        <div id="acct-in" hidden>
-          <p style="margin-top:0">Signed in as <strong id="who"></strong> <button class="btn" type="button" id="l-out" style="margin-left:8px">Sign out</button></p>
-          <div class="field"><label for="stu">Student on this device<small>Settings and progress follow the student</small></label><select id="stu"></select></div>
-          <form id="addstu" class="field" novalidate><label for="new-stu">Add a student<small>First name only, please</small></label><span style="display:flex;gap:8px"><input id="new-stu" type="text" maxlength="40" placeholder="e.g. Sam"><button class="btn" type="submit">Add</button></span></form>
-          <div class="field"><span>Remove the selected student and their progress</span><button class="btn" type="button" id="del-stu">Remove</button></div>
+        <div id="gate-wait" hidden class="gate-state">
+          <div class="state-ic" style="background:var(--g2)">⏳</div>
+          <h1>Waiting for approval</h1>
+          <p>Thanks, <b class="gname"></b>. Your request has gone to Mr Millard. Once he approves it, you can start learning. This page checks again by itself.</p>
+          <div class="row-btns"><button class="btn primary" type="button" id="recheck">Check again</button><button class="btn" type="button" class="so" data-signout>Sign out</button></div>
         </div>
+        <div id="gate-declined" hidden class="gate-state">
+          <div class="state-ic" style="background:var(--bad)">✕</div>
+          <h1>No access yet</h1>
+          <p>This account has not been given access to MillardSEN. Please speak to Mr Millard.</p>
+          <div class="row-btns"><button class="btn" type="button" data-signout>Sign out</button></div>
+        </div>
+        <p class="note" id="gate-msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHER -->
+  <section id="v-teacher" class="view" aria-labelledby="t-h">
+    <h1 id="t-h">Teacher</h1>
+    <p class="lede">Approve new students, set each student's level and see their progress. Everything is saved to the school database.</p>
+    <div class="grid2">
+      <div class="panel wide-panel">
+        <h2>Requests to join <span class="chip" id="req-count">0</span></h2>
+        <div id="req-list"></div>
+      </div>
+      <div class="panel">
+        <h2>Student</h2>
+        <div class="field"><label for="stu">Choose a student<small>Settings and progress below are for this student</small></label><select id="stu"></select></div>
+        <div class="field"><span id="stu-email" class="note" style="margin:0"></span><button class="btn" type="button" id="del-stu">Remove access</button></div>
         <p class="note" id="acct-msg" role="status" aria-live="polite"></p>
       </div>
       <div class="panel">
-        <h2>Student &amp; level</h2>
-        <div class="field" id="name-row"><label for="s-name">Student first name<small>Shown on the Learn screen</small></label><input id="s-name" type="text" maxlength="20" placeholder="e.g. Sam"></div>
+        <h2>Level</h2>
         <div class="field"><label for="s-range">Number range<small>Also sets the harder level for clock, money and signs</small></label><select id="s-range"><option value="10">Up to 10 (easier)</option><option value="20">Up to 20 (harder)</option></select></div>
         <div class="field"><label for="s-choices">Answer buttons<small>Fewer buttons = less to scan</small></label><select id="s-choices"><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
         <div class="field"><label for="s-rounds">Questions per round</label><select id="s-rounds"><option value="3">3</option><option value="5">5</option><option value="10">10</option></select></div>
@@ -236,9 +447,9 @@ ol.tips b{font-family:var(--display)}
         <div class="field"><label for="s-calm">Calm mode<small>No movement or pulsing</small></label><input id="s-calm" type="checkbox"></div>
       </div>
       <div class="panel">
-        <h2>Progress on this device</h2>
+        <h2>Progress</h2>
         <div class="tablewrap"><table><thead><tr><th>Task</th><th>Rounds</th><th>Right first try</th><th></th><th>Last</th></tr></thead><tbody id="prog"></tbody></table></div>
-        <p class="note">Use this as evidence for IPP goals alongside your own observations. <button class="btn" id="reset" type="button" style="margin-left:6px">Clear progress</button> <span id="reset-msg"></span></p>
+        <p class="note">Use this as evidence for IPP goals alongside your own observations. <button class="btn" id="reset" type="button" style="margin-left:6px">Clear this student's progress</button> <span id="reset-msg"></span></p>
       </div>
       <div class="panel">
         <h2>Tier 3 teaching moves</h2>
@@ -265,13 +476,12 @@ var SB_URL = "https://nntsfuevcawrpylypvoo.supabase.co";
 var SB_KEY = "sb_publishable_vFEZkCwkZXbLn8zO6_jzBw_9bJqRAOU";
 var sb = null;
 try{ if(window.supabase) sb = window.supabase.createClient(SB_URL, SB_KEY); }catch(e){ sb = null; }
-var user = null, students = [], activeStu = null;
+var user = null, role = "loading", myName = "", students = [], activeStu = null, MY = {}, CP = {};
 /* ---------- storage ---------- */
 function load(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
 function save(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 var DEF = {name:"", range:10, choices:3, rounds:5, errorless:true, voice:true, rate:0.85, sound:true, big:false, calm:false};
 var S = Object.assign({}, DEF, load("stepup.settings", {}));
-var P = load("stepup.progress", {});
 
 /* ---------- helpers ---------- */
 function rnd(a,b){ return a + Math.floor(Math.random()*(b-a+1)); }
@@ -338,17 +548,34 @@ function blocks(t, o){
   var W = x + Math.min(o,5)*(u+6) + 6;
   return '<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" role="img" aria-label="'+t+' tens and '+o+' ones">'+s+'</svg>';
 }
-var COINS = {5:{r:30,f:"#c9ced3",t:"5¢"},10:{r:26,f:"#d9dde0",t:"10¢"},25:{r:36,f:"#bfc5ca",t:"25¢"},100:{r:38,f:"#d4a72c",t:"$1"},200:{r:42,f:"#c9ced3",t:"$2"}};
+/* UAE dirhams: 1 AED coin; 5, 10, 20, 50 AED notes (simple drawings, not real designs) */
+var NOTES = {5:"#a8743f", 10:"#3f8a55", 20:"#2f7fb3", 50:"#7a56a8"};
+function aed(v){ return "AED " + v; }
 function coinsSVG(list){
-  var s = "", x = 8, H = 100;
+  var s = "", x = 8, H = 110;
   list.forEach(function(v){
-    var c = COINS[v]; x += c.r;
-    s += '<circle cx="'+x+'" cy="50" r="'+c.r+'" fill="'+c.f+'" stroke="#55606a" stroke-width="3"/>';
-    if(v===200) s += '<circle cx="'+x+'" cy="50" r="'+(c.r-13)+'" fill="#d4a72c"/>';
-    s += '<text x="'+x+'" y="57" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="'+(c.r>30?20:17)+'" fill="#18232e">'+c.t+'</text>';
-    x += c.r + 12;
+    if(v===1){
+      x += 34;
+      s += '<circle cx="'+x+'" cy="55" r="34" fill="#cfd5da" stroke="#55606a" stroke-width="3"/><circle cx="'+x+'" cy="55" r="26" fill="none" stroke="#8a949c" stroke-width="1.5"/>';
+      s += '<text x="'+x+'" y="56" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="24" fill="#18232e">1</text><text x="'+x+'" y="74" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="11" fill="#18232e">DIRHAM</text>';
+      x += 34 + 12;
+    } else {
+      var c = NOTES[v], w = 124;
+      s += '<rect x="'+x+'" y="22" width="'+w+'" height="66" rx="6" fill="'+c+'" stroke="#18232e" stroke-width="2.5"/>';
+      s += '<rect x="'+(x+6)+'" y="28" width="'+(w-12)+'" height="54" rx="4" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>';
+      s += '<circle cx="'+(x+30)+'" cy="55" r="15" fill="rgba(255,255,255,.28)"/>';
+      s += '<text x="'+(x+w-14)+'" y="64" text-anchor="end" font-family="Lexend, sans-serif" font-weight="700" font-size="30" fill="#ffffff">'+v+'</text>';
+      s += '<text x="'+(x+12)+'" y="81" font-family="Lexend, sans-serif" font-weight="700" font-size="10" fill="#ffffff">AED</text>';
+      x += w + 12;
+    }
   });
-  return '<svg viewBox="0 0 '+(x)+' '+H+'" width="'+x+'" role="img" aria-label="coins">'+s+'</svg>';
+  return '<svg viewBox="0 0 '+x+' '+H+'" width="'+x+'" role="img" aria-label="UAE dirham coins and notes">'+s+'</svg>';
+}
+function sumList(l){ return l.reduce(function(a,b){ return a+b; }, 0); }
+function moneyList(){
+  if(S.range===10){ var v = pick([1,1,5]), k = v===1 ? rnd(1,10) : rnd(1,4), l = []; for(var i=0;i<k;i++) l.push(v); return l; }
+  var list; do{ list = []; var n = rnd(2,5); for(var j=0;j<n;j++) list.push(pick([1,5,10,20])); list.sort(function(a,b){ return b-a; }); }while(sumList(list) > 50);
+  return list;
 }
 function clockSVG(h, m){
   var s = '<circle cx="130" cy="130" r="118" style="fill:var(--frame);stroke:var(--ink);stroke-width:6"/>';
@@ -390,13 +617,10 @@ var ACTS = [
      var set = [n]; var sw = o*10 + t; if(o>0 && sw!==n) set.push(sw);
      around(n, 6, 10, max).forEach(function(c){ if(set.indexOf(c)<0) set.push(c); });
      return {q:"What number is this?", speak:"Count the tens, then the ones. What number is this?", vis:blocks(t,o), ans:n, ch:shuffle(set.slice(0,S.choices))}; }},
-  {id:"money", t:"Money", sub:"Count Canadian coins", strand:"Money", g:"¢",
+  {id:"money", t:"Money", sub:"Count UAE dirhams", strand:"Money", g:"AED",
    gen:function(){
-     var list, total;
-     if(S.range===10){ var v = pick([5,10]), k = rnd(1, v===5?6:10); list = []; for(var i=0;i<k;i++) list.push(v); total = v*k; }
-     else { do{ list = []; var n = rnd(2,5); for(var j=0;j<n;j++) list.push(pick([5,10,25])); list.sort(function(x,y){return y-x;}); total = list.reduce(function(s,x){return s+x;},0); }while(total>100); }
-     var fmt = function(c){ return c>=100 ? "$"+(c/100).toFixed(2) : c+"¢"; };
-     return {q:"How much money?", speak:"Count the coins. How much money?", vis:coinsSVG(list), ans:total, ch:around(total, S.choices, 5, 200, 5), fmt:fmt}; }},
+     var list = moneyList(), total = sumList(list), step = list.every(function(v){ return v%5===0; }) ? 5 : 1;
+     return {q:"How much money?", speak:"Count the money. How many dirhams?", vis:coinsSVG(list), ans:total, ch:around(total, S.choices, 1, 100, step), fmt:aed}; }},
   {id:"time", t:"Clock", sub:"Tell the time", strand:"Time", g:"3:00",
    gen:function(){ var h = rnd(1,12), m = S.range===10 ? 0 : pick([0,30]);
      var f = function(H,M){ return H+":"+(M<10?"0":"")+M; }, ans = f(h,m), set = [ans];
@@ -454,15 +678,15 @@ function rulerSVG(maxCm, len){
   s += '<line x1="20" y1="14" x2="20" y2="70" style="stroke:var(--ink);stroke-width:2;stroke-dasharray:4 4"/><line x1="'+(20+len*u)+'" y1="14" x2="'+(20+len*u)+'" y2="70" style="stroke:var(--ink);stroke-width:2;stroke-dasharray:4 4"/>';
   return '<svg viewBox="0 0 '+W+' 140" width="'+W+'" role="img" aria-label="bar above a centimetre ruler">'+s+'</svg>';
 }
-function priceTag(c){ var t = c>=100 ? "$"+(c/100).toFixed(2) : c+"¢";
-  return '<svg viewBox="0 0 150 90" width="150" role="img" aria-label="price '+t+'"><path d="M30 8 H142 V82 H30 L6 45 Z" style="fill:var(--accent);stroke:var(--ink);stroke-width:3"/><circle cx="30" cy="45" r="6" style="fill:var(--paper);stroke:var(--ink);stroke-width:2"/><text x="88" y="56" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="30" fill="#18232e">'+t+'</text></svg>'; }
+function priceTag(c){ var t = aed(c);
+  return '<svg viewBox="0 0 150 90" width="150" role="img" aria-label="price '+t+'"><path d="M30 8 H142 V82 H30 L6 45 Z" style="fill:var(--accent);stroke:var(--ink);stroke-width:3"/><circle cx="30" cy="45" r="6" style="fill:var(--paper);stroke:var(--ink);stroke-width:2"/><text x="88" y="56" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="26" fill="#18232e">'+t+'</text></svg>'; }
 var DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 var WORDS = ["the","and","is","you","go","my","no","yes","can","see","look","help","come","here","we","it","stop","play","said","what"];
 var STORY = [
   {thing:"bus tickets", add:"You buy", sub:"You use"},{thing:"cups", add:"Someone brings", sub:"You wash"},
   {thing:"pencils", add:"Your teacher gives you", sub:"You lend"},{thing:"apples", add:"You pick", sub:"You eat"},
   {thing:"chairs", add:"You carry in", sub:"You take away"},{thing:"football cards", add:"A friend gives you", sub:"You trade away"},
-  {thing:"dollars", add:"You earn", sub:"You spend"},{thing:"songs on your playlist", add:"You add", sub:"You delete"}
+  {thing:"dirhams", add:"You earn", sub:"You spend"},{thing:"songs on your playlist", add:"You add", sub:"You delete"}
 ];
 var wordy = function(v){ return '<span style="font-size:clamp(1.1rem,2.6vw,1.6rem)">'+esc(v)+'</span>'; };
 ACTS.push(
@@ -486,14 +710,13 @@ ACTS.push(
   {id:"measure", t:"Measure", sub:"Use a ruler in centimetres", strand:"Measurement", grp:"Money, time & measuring", g:"cm",
    gen:function(){ var max = S.range===10 ? 10 : 15, len = rnd(1, max);
      return {q:"How long is the bar?", speak:"The bar starts at zero. How many centimetres long is it?", vis:rulerSVG(max, len), ans:len, ch:around(len, S.choices, 1, max), fmt:function(v){ return v+" cm"; }}; }},
-  {id:"enough", t:"Can I buy it?", sub:"Do you have enough money?", strand:"Money", grp:"Money, time & measuring", g:"$?",
+  {id:"enough", t:"Can I buy it?", sub:"Do you have enough money?", strand:"Money", grp:"Money, time & measuring", g:"AED?",
    gen:function(){ var list, total;
-     if(S.range===10){ var v = pick([10,25]), k = rnd(1,4); list = []; for(var i=0;i<k;i++) list.push(v); }
-     else { list = []; var n = rnd(2,5); for(var j=0;j<n;j++) list.push(pick([5,10,25])); list.sort(function(x,y){return y-x;}); }
-     total = list.reduce(function(s,x){return s+x;},0);
-     var price = Math.random()<0.5 ? total - 5*rnd(0, Math.min(4, total/5 - 1)) : total + 5*rnd(1,4);
+     list = moneyList(); total = sumList(list);
+     var unit = total >= 10 ? pick([1,2,5]) : 1;
+     var price = Math.random()<0.5 ? Math.max(1, total - unit*rnd(0,3)) : total + unit*rnd(1,3);
      var vis = '<div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center">'+coinsSVG(list)+priceTag(price)+'</div>';
-     return {q:"Do you have enough money?", speak:"Count your coins. Do you have enough to pay the price on the tag?", vis:vis, ans: total>=price ? "Yes" : "No", ch:["Yes","No"], fixed:true}; }},
+     return {q:"Do you have enough money?", speak:"Count your money. Do you have enough dirhams to pay the price on the tag?", vis:vis, ans: total>=price ? "Yes" : "No", ch:["Yes","No"], fixed:true}; }},
   {id:"shapes", t:"Shapes", sub:"Name the shape", strand:"Geometry", grp:"Shape & pattern", g:"◆",
    gen:function(){ var pool = S.range===10 ? ["circle","square","triangle","rectangle"] : ["circle","square","triangle","rectangle","pentagon","hexagon","octagon","oval"];
      var opts = shuffle(pool).slice(0, S.choices), target = pick(opts);
@@ -518,6 +741,31 @@ ACTS.push(
      return {q: S.voice ? "Listen. Find the word." : "Find the word: "+target, speak:"Find the word "+target+".", vis:'<p style="margin:0;color:var(--muted)">Tap the speaker to hear the word again.</p>', ans:target, ch:opts, render:function(v){ return '<span style="font-family:var(--body);text-transform:none">'+esc(v)+'</span>'; }}; }}
 );
 var GROUPS = ["Number", "Money, time & measuring", "Shape & pattern", "Reading & life skills"];
+var GINFO = {
+  "Number": {c:"--g1", cls:"a1", blurb:"Count, add, take away, tens and ones, number lines and story problems.",
+    ic:'<svg viewBox="0 0 40 40" width="40"><g fill="#fff"><circle cx="9" cy="12" r="5"/><circle cx="20" cy="12" r="5"/><circle cx="31" cy="12" r="5"/><circle cx="9" cy="28" r="5"/><circle cx="20" cy="28" r="5" opacity=".45"/><circle cx="31" cy="28" r="5" opacity=".45"/></g></svg>'},
+  "Money, time & measuring": {c:"--g2", cls:"a2", blurb:"UAE dirhams, shopping, clocks and measuring with a ruler.",
+    ic:'<svg viewBox="0 0 40 40" width="40"><circle cx="20" cy="20" r="15" fill="none" stroke="#2a1600" stroke-width="3.5"/><path d="M20 10v10l7 5" stroke="#2a1600" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>'},
+  "Shape & pattern": {c:"--g3", cls:"a3", blurb:"Name shapes and find what comes next in a pattern.",
+    ic:'<svg viewBox="0 0 40 40" width="40"><polygon points="11,6 19,20 3,20" fill="#fff"/><rect x="22" y="6" width="14" height="14" rx="2" fill="#fff" opacity=".7"/><circle cx="20" cy="30" r="7" fill="#fff"/></svg>'},
+  "Reading & life skills": {c:"--g4", cls:"a4", blurb:"Everyday signs, sight words and the days of the week.",
+    ic:'<svg viewBox="0 0 40 40" width="40"><rect x="4" y="9" width="32" height="22" rx="4" fill="#fff"/><text x="20" y="25" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="700" font-size="12" fill="#12a594">Aa</text></svg>'}
+};
+function renderHome(){
+  document.getElementById("home-hello").textContent = S.name ? "Welcome back, "+S.name+"!" : "Welcome";
+  document.getElementById("st-tasks").textContent = ACTS.length;
+  document.getElementById("st-res").textContent = LIB.length;
+  document.getElementById("areas").innerHTML = GROUPS.map(function(g, i){
+    var n = ACTS.filter(function(a){ return a.grp===g; }).length, gi = GINFO[g];
+    return '<button type="button" class="area '+gi.cls+'" data-group="'+i+'" style="background:var('+gi.c+')"><span class="ic" aria-hidden="true">'+gi.ic+'</span><h3>'+esc(g)+'</h3><p>'+esc(gi.blurb)+'</p><span class="cnt"><span>'+n+' tasks</span><span aria-hidden="true">→</span></span></button>';
+  }).join("");
+}
+document.getElementById("areas").addEventListener("click", function(e){
+  var b = e.target.closest(".area"); if(!b) return;
+  var target = "grp-"+b.dataset.group;
+  if(location.hash !== "#learn") location.hash = "learn";
+  setTimeout(function(){ var el = document.getElementById(target); if(el){ el.scrollIntoView({behavior: S.calm ? "auto" : "smooth", block:"start"}); var f = el.querySelector(".tile"); if(f) f.focus({preventScroll:true}); } }, 60);
+});
 ACTS.forEach(function(a){ if(!a.grp) a.grp = {count:"Number",add:"Number",sub:"Number",more:"Number",place:"Number",money:"Money, time & measuring",time:"Money, time & measuring",signs:"Reading & life skills"}[a.id]; });
 
 /* ---------- player ---------- */
@@ -530,7 +778,7 @@ function renderTiles(){
   };
   tilesEl.innerHTML = GROUPS.map(function(g){
     var list = ACTS.filter(function(a){ return a.grp===g; });
-    return '<section class="tgroup"><h2>'+esc(g)+' <span class="chip">'+list.length+'</span></h2><div class="tiles">'+list.map(tile).join("")+'</div></section>';
+    return '<section class="tgroup" id="grp-'+GROUPS.indexOf(g)+'" style="--gc:var('+GINFO[g].c+')"><h2>'+esc(g)+' <span class="chip">'+list.length+'</span></h2><div class="tiles">'+list.map(tile).join("")+'</div></section>';
   }).join("");
 }
 tilesEl.addEventListener("click", function(e){ var b = e.target.closest(".tile"); if(b) start(b.dataset.act); });
@@ -580,12 +828,12 @@ function choose(b){
   }
 }
 function finish(){
-  var p = P[R.act.id] || {rounds:0, qs:0, first:0, last:""};
+  var p = MY[R.act.id] || {rounds:0, qs:0, first:0, last:""};
   p.rounds++; p.qs += S.rounds; p.first += R.first; p.last = new Date().toISOString().slice(0,10);
-  P[R.act.id] = p; save("stepup.progress", P);
-  if(sb && user && activeStu){
-    sb.from("sen_rounds").insert({student_id:activeStu.id, activity:R.act.id, questions:S.rounds, first_try:R.first,
-      level:{range:S.range, choices:S.choices, errorless:S.errorless}}).then(function(r){ if(r.error) console.warn("Round not saved:", r.error.message); else loadCloudProgress(); });
+  MY[R.act.id] = p;
+  if(sb && user && (role==="student" || role==="admin")){
+    sb.from("sen_rounds").insert({activity:R.act.id, questions:S.rounds, first_try:R.first,
+      level:{range:S.range, choices:S.choices, errorless:S.errorless}}).then(function(r){ if(r.error) console.warn("Round not saved:", r.error.message); else loadMyProgress(); });
   }
   var st = ""; for(var i=0;i<S.rounds;i++) st += '<span class="'+(i<R.first?"on":"")+'"></span>';
   play.innerHTML = '<div class="player"><div class="endcard"><h2>Round done</h2><div class="big">'+R.first+' / '+S.rounds+'</div><p style="margin:0">right first time</p><div class="stars" aria-hidden="true">'+st+'</div>'+
@@ -725,7 +973,7 @@ var LIB = [
  // MORE — added
  {n:"mathies (Ontario)", u:"https://www.mathies.ca", s:["Maths"], ty:"Manipulative", c:"Free", teen:true, a:["Canadian money","rekenrek","no ads","offline apps"],
   w:"Free Canadian virtual manipulatives from the Ontario Association for Mathematics Education, including realistic Canadian coins and bills.",
-  tip:"Its Money tool uses real Canadian coins, matching the coin tasks in the Learn tab. Practise counting by 5s, 10s and 25s."},
+  tip:"Great free manipulatives. Its money tool is Canadian, so for money use real dirham coins and notes, or the AED tasks in the Learn tab."},
  {n:"Teaching Money (Canadian)", u:"https://teachingmoney.co.uk/indexCAD.html", s:["Maths","Life skills"], ty:"Interactive", c:"Free", teen:false, a:["Canadian coins","giving change"],
   w:"Interactive games for recognising Canadian coins, making totals and giving change.",
   tip:"Use the teaching tool on a projector first, then let the student try one game."},
@@ -799,155 +1047,224 @@ function renderLib(){
 
 /* ---------- teacher ---------- */
 function applyLook(){ var r = document.documentElement; r.classList.toggle("big", !!S.big); r.classList.toggle("calm", !!S.calm); }
-function bindSettings(){
-  var map = {"s-name":"name","s-range":"range","s-choices":"choices","s-rounds":"rounds","s-errorless":"errorless","s-voice":"voice","s-rate":"rate","s-sound":"sound","s-big":"big","s-calm":"calm"};
-  Object.keys(map).forEach(function(id){
-    var el = document.getElementById(id), k = map[id];
-    if(el.type==="checkbox") el.checked = !!S[k]; else el.value = S[k];
-    el.addEventListener("change", function(){
-      S[k] = el.type==="checkbox" ? el.checked : (el.type==="text" ? el.value.trim() : Number(el.value));
-      save("stepup.settings", S); applyLook(); renderTiles(); pushSettings();
-    });
-  });
-}
+var KEYS = ["range","choices","rounds","errorless","voice","rate","sound","big","calm"];
+var ES = Object.assign({}, DEF); // settings being edited for the selected student
 function fillSettings(){
-  ["name","range","choices","rounds","errorless","voice","rate","sound","big","calm"].forEach(function(k){
-    var el = document.getElementById("s-"+k); if(!el) return;
-    if(el.type==="checkbox") el.checked = !!S[k]; else el.value = S[k];
+  KEYS.forEach(function(k){ var el = document.getElementById("s-"+k); if(el.type==="checkbox") el.checked = !!ES[k]; else el.value = ES[k]; });
+}
+function bindSettings(){
+  KEYS.forEach(function(k){
+    var el = document.getElementById("s-"+k);
+    el.addEventListener("change", function(){
+      if(!activeStu){ msg("Choose a student first."); fillSettings(); return; }
+      ES[k] = el.type==="checkbox" ? el.checked : Number(el.value);
+      pushSettings();
+    });
   });
 }
 var pushT = null;
 function pushSettings(){
-  if(!(sb && user && activeStu)) return;
   clearTimeout(pushT);
+  var stu = activeStu, st = {}; KEYS.forEach(function(k){ st[k] = ES[k]; });
   pushT = setTimeout(function(){
-    var st = Object.assign({}, S); delete st.name;
-    activeStu.settings = st;
-    sb.from("sen_students").update({settings:st}).eq("id", activeStu.id).then(function(r){ if(r.error) msg("Settings not saved: "+r.error.message); });
-  }, 500);
-}
-var CP = null; // cloud progress for active student
-function loadCloudProgress(){
-  CP = null;
-  if(!(sb && user && activeStu)){ renderProg(); renderTiles(); return; }
-  sb.from("sen_rounds").select("activity,questions,first_try,created_at").eq("student_id", activeStu.id).order("created_at",{ascending:false}).limit(2000)
-    .then(function(r){
-      if(r.error){ msg("Could not load progress: "+r.error.message); return; }
-      CP = {};
-      r.data.forEach(function(x){
-        var p = CP[x.activity] || (CP[x.activity] = {rounds:0, qs:0, first:0, last:x.created_at.slice(0,10)});
-        p.rounds++; p.qs += x.questions; p.first += x.first_try;
-      });
-      renderProg(); renderTiles();
+    sb.from("sen_profiles").update({settings:st, updated_at:new Date().toISOString()}).eq("user_id", stu.user_id).then(function(r){
+      if(r.error) msg("Settings not saved: "+r.error.message); else { stu.settings = st; msg("Saved for "+stu.first_name+"."); }
     });
+  }, 400);
 }
-function progSource(){ return CP || P; }
+function tally(rows){
+  var o = {};
+  rows.forEach(function(x){ var p = o[x.activity] || (o[x.activity] = {rounds:0, qs:0, first:0, last:x.created_at.slice(0,10)}); p.rounds++; p.qs += x.questions; p.first += x.first_try; });
+  return o;
+}
+function loadMyProgress(){
+  if(!(sb && user)){ MY = {}; renderTiles(); return; }
+  sb.from("sen_rounds").select("activity,questions,first_try,created_at").eq("user_id", user.id).order("created_at",{ascending:false}).limit(2000)
+    .then(function(r){ if(!r.error){ MY = tally(r.data); renderTiles(); } });
+}
+function loadStudentProgress(){
+  CP = {};
+  if(!activeStu){ renderProg(); return; }
+  sb.from("sen_rounds").select("activity,questions,first_try,created_at").eq("user_id", activeStu.user_id).order("created_at",{ascending:false}).limit(2000)
+    .then(function(r){ if(r.error){ msg("Could not load progress: "+r.error.message); return; } CP = tally(r.data); renderProg(); });
+}
+function progSource(){ return MY; }
 function renderProg(){
-  document.getElementById("prog").innerHTML = ACTS.map(function(a){
-    var p = progSource()[a.id]; if(!p) return '<tr><td>'+a.t+'</td><td>0</td><td colspan="2" style="color:var(--muted)">Not tried</td><td>–</td></tr>';
+  document.getElementById("prog").innerHTML = activeStu ? ACTS.map(function(a){
+    var p = CP[a.id]; if(!p) return '<tr><td>'+a.t+'</td><td>0</td><td colspan="2" style="color:var(--muted)">Not tried</td><td>–</td></tr>';
     var pc = Math.round(100*p.first/p.qs);
     return '<tr><td>'+a.t+'</td><td>'+p.rounds+'</td><td>'+pc+'%</td><td><div class="bar"><i style="width:'+pc+'%"></i></div></td><td>'+p.last+'</td></tr>';
-  }).join("");
+  }).join("") : '<tr><td colspan="5" style="color:var(--muted)">Choose a student to see their progress.</td></tr>';
 }
 var armed = false;
 document.getElementById("reset").onclick = function(){
-  var m = document.getElementById("reset-msg");
-  if(!armed){ armed = true; m.textContent = "Tap again to confirm."; setTimeout(function(){ armed=false; m.textContent=""; }, 4000); return; }
-  P = {}; save("stepup.progress", P); armed = false; m.textContent = "Progress cleared."; renderProg(); renderTiles();
-  if(sb && user && activeStu){
-    sb.from("sen_rounds").delete().eq("student_id", activeStu.id).then(function(r){
-      m.textContent = r.error ? "Could not clear saved progress: "+r.error.message : "Progress cleared for "+activeStu.first_name+".";
-      loadCloudProgress();
-    });
-  }
+  var m = document.getElementById("reset-msg"); if(!activeStu) return;
+  if(!armed){ armed = true; m.textContent = "Tap again to delete all of "+activeStu.first_name+"'s rounds."; setTimeout(function(){ armed=false; m.textContent=""; }, 5000); return; }
+  armed = false;
+  sb.from("sen_rounds").delete().eq("user_id", activeStu.user_id).then(function(r){
+    m.textContent = r.error ? "Could not clear progress: "+r.error.message : "Progress cleared for "+activeStu.first_name+".";
+    loadStudentProgress();
+  });
 };
 
-/* ---------- account & students ---------- */
+/* ---------- approvals (teacher) ---------- */
+var REQ = [];
 function msg(t){ document.getElementById("acct-msg").textContent = t || ""; }
-function showAcct(){
-  var on = !!user;
-  document.getElementById("acct-out").hidden = on;
-  document.getElementById("acct-in").hidden = !on;
-  document.getElementById("name-row").hidden = on && !!activeStu;
-  if(on) document.getElementById("who").textContent = user.email || "teacher";
-  if(!sb){ msg("Online saving is unavailable right now. Progress stays on this device."); document.getElementById("login").hidden = true; }
+function loadAdmin(){
+  return Promise.all([
+    sb.from("app_access").select("user_id,email,display_name,status,requested_at").eq("app","millardsen").order("requested_at",{ascending:true}),
+    sb.from("sen_profiles").select("user_id,first_name,settings")
+  ]).then(function(res){
+    if(res[0].error){ msg("Could not load requests: "+res[0].error.message); return; }
+    REQ = res[0].data; var profs = res[1].data || [];
+    students = REQ.filter(function(r){ return r.status==="approved"; }).map(function(r){
+      var pr = profs.filter(function(p){ return p.user_id===r.user_id; })[0];
+      return {user_id:r.user_id, email:r.email, first_name: pr ? pr.first_name : (r.display_name || (r.email||"").split("@")[0]), settings: pr ? pr.settings : {} , hasProfile: !!pr};
+    }).sort(function(a,b){ return a.first_name.localeCompare(b.first_name); });
+    renderRequests(); renderStudents();
+    var want = activeStu ? activeStu.user_id : load("millardsen.activeStudent", null);
+    selectStudent((students.filter(function(s){ return s.user_id===want; })[0] || students[0] || {}).user_id);
+  });
 }
+function renderRequests(){
+  var pend = REQ.filter(function(r){ return r.status==="pending"; }), dec = REQ.filter(function(r){ return r.status==="declined"; });
+  document.getElementById("req-count").textContent = pend.length;
+  var row = function(r, btns){ return '<div class="req"><div class="who"><b>'+esc(r.display_name || "No name given")+'</b><span>'+esc(r.email || "")+' · asked '+esc((r.requested_at||"").slice(0,10))+'</span></div>'+btns+'</div>'; };
+  var html = pend.length ? pend.map(function(r){ return row(r, '<button class="btn ok" type="button" data-approve="'+r.user_id+'">Approve</button><button class="btn no" type="button" data-decline="'+r.user_id+'">Decline</button>'); }).join("")
+                         : '<p class="empty">No new requests. When a student taps "I am new" and sends a request, it appears here.</p>';
+  if(dec.length) html += '<details style="margin-top:12px"><summary>Declined or removed ('+dec.length+')</summary>'+dec.map(function(r){ return row(r, '<button class="btn ok" type="button" data-approve="'+r.user_id+'">Approve</button>'); }).join("")+'</details>';
+  document.getElementById("req-list").innerHTML = html;
+}
+function decide(uid, status){
+  var r = REQ.filter(function(x){ return x.user_id===uid; })[0]; if(!r) return;
+  sb.from("app_access").update({status:status, decided_at:new Date().toISOString(), decided_by:user.id}).eq("app","millardsen").eq("user_id", uid).then(function(res){
+    if(res.error){ msg("Could not update: "+res.error.message); return; }
+    if(status==="approved"){
+      var st = {}; KEYS.forEach(function(k){ st[k] = DEF[k]; });
+      var name = (r.display_name || (r.email||"student").split("@")[0]).slice(0,40);
+      sb.from("sen_profiles").upsert({user_id:uid, first_name:name, settings:st}, {onConflict:"user_id", ignoreDuplicates:true}).then(function(p){
+        msg(p.error ? "Approved, but the profile was not created: "+p.error.message : name+" can now use MillardSEN.");
+        activeStu = {user_id:uid}; loadAdmin();
+      });
+    } else { msg((r.display_name||"Request")+" declined."); loadAdmin(); }
+  });
+}
+document.getElementById("req-list").addEventListener("click", function(e){
+  var a = e.target.closest("[data-approve]"), d = e.target.closest("[data-decline]");
+  if(a) decide(a.dataset.approve, "approved"); if(d) decide(d.dataset.decline, "declined");
+});
 function renderStudents(){
   var sel = document.getElementById("stu");
-  sel.innerHTML = students.length ? students.map(function(s){ return '<option value="'+s.id+'"'+(activeStu && activeStu.id===s.id?" selected":"")+'>'+esc(s.first_name)+'</option>'; }).join("") : '<option value="">Add a student first</option>';
+  sel.innerHTML = students.length ? students.map(function(s){ return '<option value="'+s.user_id+'"'+(activeStu && activeStu.user_id===s.user_id?" selected":"")+'>'+esc(s.first_name)+'</option>'; }).join("") : '<option value="">No approved students yet</option>';
 }
-function selectStudent(id){
-  activeStu = students.filter(function(s){ return s.id===id; })[0] || null;
-  if(activeStu){
-    save("stepup.activeStudent", activeStu.id);
-    S = Object.assign({}, DEF, activeStu.settings || {}, {name: activeStu.first_name});
-    save("stepup.settings", S); fillSettings(); applyLook();
+function selectStudent(uid){
+  activeStu = students.filter(function(s){ return s.user_id===uid; })[0] || null;
+  ES = Object.assign({}, DEF, activeStu ? activeStu.settings : {});
+  if(activeStu){ save("millardsen.activeStudent", activeStu.user_id); document.getElementById("stu-email").textContent = activeStu.email || ""; }
+  else document.getElementById("stu-email").textContent = "";
+  if(activeStu && !activeStu.hasProfile){ // approved before profiles existed: create one
+    var st = {}; KEYS.forEach(function(k){ st[k] = DEF[k]; });
+    sb.from("sen_profiles").upsert({user_id:activeStu.user_id, first_name:activeStu.first_name.slice(0,40), settings:st}, {onConflict:"user_id"}).then(function(){});
+    activeStu.hasProfile = true;
   }
-  showAcct(); renderStudents(); loadCloudProgress();
+  renderStudents(); fillSettings(); loadStudentProgress();
 }
-function loadStudents(){
-  return sb.from("sen_students").select("id,first_name,settings,created_at").order("first_name").then(function(r){
-    if(r.error){ msg("Could not load students: "+r.error.message); return; }
-    students = r.data;
-    var want = load("stepup.activeStudent", null);
-    selectStudent((students.filter(function(s){ return s.id===want; })[0] || students[0] || {}).id);
+document.getElementById("stu").onchange = function(){ msg(""); selectStudent(this.value); };
+var delArmed = false;
+document.getElementById("del-stu").onclick = function(){
+  if(!activeStu) return;
+  if(!delArmed){ delArmed = true; msg("Tap Remove access again to stop "+activeStu.first_name+" using MillardSEN. Their progress is kept."); setTimeout(function(){ delArmed=false; }, 5000); return; }
+  delArmed = false; var gone = activeStu; activeStu = null; decide(gone.user_id, "declined");
+};
+
+/* ---------- sign in ---------- */
+function gmsg(t){ document.getElementById("gate-msg").textContent = t || ""; }
+function showGate(which){
+  ["gate-loading","gate-forms","gate-wait","gate-declined"].forEach(function(id){ document.getElementById(id).hidden = id!==which; });
+  document.querySelectorAll(".gname").forEach(function(el){ el.textContent = myName || "there"; });
+}
+function updateChrome(){
+  document.getElementById("nav-teacher").hidden = role!=="admin";
+  document.getElementById("chip-in").hidden = !!user;
+  document.getElementById("chip-user").hidden = !user;
+  document.getElementById("chip-name").textContent = myName || (user && user.email) || "";
+}
+var pollT = null;
+function setRole(r){
+  role = r; updateChrome(); clearInterval(pollT);
+  if(r==="none") showGate("gate-forms");
+  else if(r==="pending"){ showGate("gate-wait"); pollT = setInterval(checkAccess, 20000); }
+  else if(r==="declined") showGate("gate-declined");
+  else if(r==="loading") showGate("gate-loading");
+  if(r==="student" || r==="admin"){ loadMyProgress(); var back = sessionStorage && safeGet("millardsen.after"); if(back && location.hash==="#signin"){ location.hash = back; } }
+  if(r==="admin") loadAdmin();
+  route();
+}
+function safeGet(k){ try{ return sessionStorage.getItem(k); }catch(e){ return null; } }
+function safeSet(k,v){ try{ sessionStorage.setItem(k,v); }catch(e){} }
+function checkAccess(){
+  if(!(sb && user)) return;
+  Promise.all([
+    sb.from("app_admins").select("app").eq("user_id", user.id).eq("app","millardsen"),
+    sb.from("app_access").select("status,display_name").eq("user_id", user.id).eq("app","millardsen").maybeSingle(),
+    sb.from("sen_profiles").select("first_name,settings").eq("user_id", user.id).maybeSingle()
+  ]).then(function(res){
+    var isAdmin = !res[0].error && res[0].data && res[0].data.length > 0, acc = res[1].data, prof = res[2].data;
+    var metaName = (user.user_metadata && user.user_metadata.first_name) || "";
+    myName = (prof && prof.first_name) || (acc && acc.display_name) || metaName || (isAdmin ? "Mr Millard" : "");
+    S = Object.assign({}, DEF, prof ? prof.settings : {}, {name: myName}); applyLook();
+    if(isAdmin){ setRole("admin"); return; }
+    if(acc && acc.status==="approved"){ setRole("student"); return; }
+    if(acc && acc.status==="declined"){ setRole("declined"); return; }
+    if(acc){ setRole("pending"); return; }
+    // first sign-in: send the request
+    var name = (metaName || (user.email||"").split("@")[0]).slice(0,40);
+    sb.from("app_access").insert({user_id:user.id, app:"millardsen", email:user.email, display_name:name}).then(function(r){
+      if(r.error){ gmsg("Could not send your request: "+r.error.message); }
+      myName = name; setRole("pending");
+    });
   });
 }
 function onSession(session){
   user = session ? session.user : null;
-  if(!user){ students = []; activeStu = null; CP = null; showAcct(); renderProg(); renderTiles(); return; }
-  showAcct(); loadStudents();
+  if(!user){ myName = ""; MY = {}; students = []; activeStu = null; S = Object.assign({}, DEF); applyLook(); setRole("none"); renderTiles(); return; }
+  setRole("loading"); checkAccess();
 }
-if(sb){
-  sb.auth.getSession().then(function(r){ onSession(r.data.session); });
-  sb.auth.onAuthStateChange(function(ev, session){ if(ev==="SIGNED_IN" || ev==="SIGNED_OUT") onSession(session); });
+document.getElementById("tab-in").onclick = function(){ switchTab(true); };
+document.getElementById("tab-up").onclick = function(){ switchTab(false); };
+function switchTab(isIn){
+  document.getElementById("tab-in").setAttribute("aria-selected", isIn); document.getElementById("tab-up").setAttribute("aria-selected", !isIn);
+  document.getElementById("form-in").hidden = !isIn; document.getElementById("form-up").hidden = isIn; gmsg("");
 }
-document.getElementById("login").addEventListener("submit", function(e){
-  e.preventDefault(); if(!sb) return;
-  var em = document.getElementById("l-email").value.trim(), pw = document.getElementById("l-pass").value;
-  if(!em || pw.length<6){ msg("Enter your email and a password of at least 6 characters."); return; }
-  msg("Signing in…");
-  sb.auth.signInWithPassword({email:em, password:pw}).then(function(r){ msg(r.error ? "Sign-in failed: "+r.error.message : ""); });
-});
-document.getElementById("l-up").onclick = function(){
-  if(!sb) return;
-  var em = document.getElementById("l-email").value.trim(), pw = document.getElementById("l-pass").value;
-  if(!em || pw.length<6){ msg("Enter your email and a password of at least 6 characters, then tap Create account."); return; }
-  msg("Creating account…");
-  sb.auth.signUp({email:em, password:pw, options:{emailRedirectTo: location.origin}}).then(function(r){
-    if(r.error) msg("Could not create account: "+r.error.message);
-    else if(!r.data.session) msg("Check your email to confirm the account, then sign in here.");
-    else msg("");
-  });
-};
-document.getElementById("l-out").onclick = function(){ if(sb) sb.auth.signOut(); };
-document.getElementById("stu").onchange = function(){ selectStudent(this.value); };
-document.getElementById("addstu").addEventListener("submit", function(e){
+document.getElementById("form-in").addEventListener("submit", function(e){
   e.preventDefault();
-  var inp = document.getElementById("new-stu"), n = inp.value.trim(); if(!n){ msg("Type a first name first."); return; }
-  var st = Object.assign({}, DEF); delete st.name;
-  sb.from("sen_students").insert({first_name:n, settings:st}).select("id,first_name,settings,created_at").single().then(function(r){
-    if(r.error){ msg("Could not add student: "+r.error.message); return; }
-    inp.value = ""; students.push(r.data); students.sort(function(a,b){ return a.first_name.localeCompare(b.first_name); });
-    msg(n+" added."); selectStudent(r.data.id);
+  var em = document.getElementById("in-email").value.trim(), pw = document.getElementById("in-pass").value;
+  if(!em || !pw){ gmsg("Type your email and password."); return; }
+  gmsg("Signing in…");
+  sb.auth.signInWithPassword({email:em, password:pw}).then(function(r){ gmsg(r.error ? "That did not work: "+r.error.message+". Check your email and password." : ""); });
+});
+document.getElementById("form-up").addEventListener("submit", function(e){
+  e.preventDefault();
+  var nm = document.getElementById("up-name").value.trim(), em = document.getElementById("up-email").value.trim(), pw = document.getElementById("up-pass").value;
+  if(!nm){ gmsg("Type your first name."); return; }
+  if(!em || pw.length<6){ gmsg("Type your email and a password with at least 6 letters or numbers."); return; }
+  gmsg("Sending…");
+  sb.auth.signUp({email:em, password:pw, options:{data:{first_name:nm}, emailRedirectTo: location.origin + "/#signin"}}).then(function(r){
+    if(r.error){ gmsg("Could not create the account: "+r.error.message); return; }
+    if(!r.data.session){ switchTab(true); document.getElementById("in-email").value = em; gmsg("Nearly there! Open your email and tap the link to confirm, then sign in here. Your request goes to Mr Millard when you first sign in."); }
   });
 });
-var delArmed = false;
-document.getElementById("del-stu").onclick = function(){
-  if(!activeStu) return;
-  if(!delArmed){ delArmed = true; msg("Tap Remove again to delete "+activeStu.first_name+" and all their progress."); setTimeout(function(){ delArmed=false; }, 5000); return; }
-  delArmed = false; var gone = activeStu;
-  sb.from("sen_students").delete().eq("id", gone.id).then(function(r){
-    if(r.error){ msg("Could not remove: "+r.error.message); return; }
-    students = students.filter(function(s){ return s.id!==gone.id; }); msg(gone.first_name+" removed.");
-    selectStudent((students[0]||{}).id);
-  });
-};
-showAcct();
+document.addEventListener("click", function(e){ if(e.target.closest("[data-signout]") && sb){ sb.auth.signOut(); location.hash = "home"; } });
+document.getElementById("recheck").onclick = function(){ gmsg("Checking…"); checkAccess(); setTimeout(function(){ gmsg(""); }, 1500); };
 
 /* ---------- routing ---------- */
+var GATED = {learn:true, library:true, teacher:true};
 function route(){
-  var v = (location.hash || "#learn").slice(1); if(["learn","library","teacher"].indexOf(v)<0) v = "learn";
+  var v = (location.hash || "#home").slice(1); if(["home","learn","library","teacher","signin"].indexOf(v)<0) v = "home";
+  var ok = role==="admin" || (role==="student" && v!=="teacher");
+  if(GATED[v] && !ok){ safeSet("millardsen.after", v); v = "signin"; }
+  if(v==="signin" && (role==="admin" || role==="student")) v = "home";
+  if(v==="home") renderHome();
   document.querySelectorAll(".view").forEach(function(s){ s.classList.toggle("on", s.id==="v-"+v); });
   document.querySelectorAll("nav.tabs a").forEach(function(a){ if(a.dataset.view===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   if(v==="teacher") renderProg();
@@ -955,7 +1272,12 @@ function route(){
 }
 window.addEventListener("hashchange", route);
 
-applyLook(); bindSettings(); renderTiles(); renderLib(); route();
+applyLook(); bindSettings(); renderTiles(); renderLib(); updateChrome();
+if(sb){
+  setRole("loading");
+  sb.auth.getSession().then(function(r){ onSession(r.data.session); });
+  sb.auth.onAuthStateChange(function(ev, session){ if(ev==="SIGNED_IN" && (!user || user.id!==session.user.id)) onSession(session); if(ev==="SIGNED_OUT") onSession(null); });
+} else { role = "none"; showGate("gate-forms"); gmsg("Sign-in is not available right now. Please check the internet connection and reload."); route(); }
 })();
 </script>
 </body>
